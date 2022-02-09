@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html><html><head>
+<!DOCTYPE html>
+<html>
+<head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <meta charset="UTF-8">
@@ -46,13 +48,13 @@ h4{
 	<h4 class="sub_title">현재 상영작</h4><br>
 	
 	<ul>
-		<li><img class="movie_img" src="1.jpg" alt=""></li>
-		<li><img class="movie_img" src="2.jpg" alt=""></li>
-		<li><img class="movie_img" src="3.jpg" alt=""></li>
-		<li><img class="movie_img" src="4.jpg" alt=""></li>
+		<li><img class="movie_img" src="/Img/1.jpg" alt=""></li>
+		<li><img class="movie_img" src="/Img/2.jpg" alt=""></li>
+		<li><img class="movie_img" src="/Img/3.jpg" alt=""></li>
+		<li><img class="movie_img" src="/Img/4.jpg" alt=""></li>
 	</ul>
 	<ul>
-		<li><a href="#"> 영화정보 </a>|<a href="#"> 상영시간 </a>|<a href="#"> 예매하기 </a></li>
+		<li><a href="movieDetail"> 영화정보 </a>|<a href="#"> 상영시간 </a>|<a href="#"> 예매하기 </a></li>
 		<li><a href="#"> 영화정보 </a>|<a href="#"> 상영시간 </a>|<a href="#"> 예매하기 </a></li>
 		<li><a href="#"> 영화정보 </a>|<a href="#"> 상영시간 </a>|<a href="#"> 예매하기 </a></li>
 		<li><a href="#"> 영화정보 </a>|<a href="#"> 상영시간 </a>|<a href="#"> 예매하기 </a></li>
@@ -63,10 +65,10 @@ h4{
 	<h4 class="sub_title">상영 예정작</h4><br>
 
 	<ul>
-		<li><img class="movie_img" src="1-1.jpg" alt=""></li>
-		<li><img class="movie_img" src="1-2.jpg" alt=""></li>
-		<li><img class="movie_img" src="1-3.jpg" alt=""></li>
-		<li><img class="movie_img" src="1-4.jpg" alt=""></li>
+		<li><img class="movie_img" src="/Img/1-1.jpg" alt=""></li>
+		<li><img class="movie_img" src="/Img/1-2.jpg" alt=""></li>
+		<li><img class="movie_img" src="/img/1-3.jpg" alt=""></li>
+		<li><img class="movie_img" src="/img/1-4.jpg" alt=""></li>
 	</ul>
 	
 	<h1>______</h1>
