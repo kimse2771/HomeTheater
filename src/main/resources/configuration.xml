@@ -7,7 +7,7 @@
 			type="com.oracle.HomeTheater.model.Movie" />
 		<typeAlias alias="MovieLike"
 			type="com.oracle.HomeTheater.model.MovieLike" />
-					<typeAlias alias="Member"
+		<typeAlias alias="Member"
 			type="com.oracle.HomeTheater.model.Member" />
 
 	</typeAliases>

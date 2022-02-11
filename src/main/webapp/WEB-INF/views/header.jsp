@@ -95,7 +95,7 @@ a {
 <nav class="top_menu">
 	<ul>
 		<li><a class="menuLink" href="movieList">영화</a></li>
-		<li><a class="menuLink" href="#">추천영화</a></li>
+		<li><a class="menuLink" href="movieRecommendList">추천영화</a></li>
 		<li><a class="menuLink" href="#">공지사항</a></li>
 		<li><a class="menuLink" href="#">고객센터</a></li>
 		<li><i class="fas fa-search" style="font-size: 15px;" onclick="search()"></i>&nbsp;

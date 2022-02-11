@@ -5,8 +5,6 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-<link rel="stylesheet" href="src/main/resources/movieDetail.css">
-
 
 <!DOCTYPE html>
 <html>
@@ -23,9 +21,11 @@
 	height: 400px;
 }
 
-#recommendationUnLike {
-	background-color: white;
+#recommendationUnLike{
+background-color: white;
 }
+
+
 </style>
 <body>
 	<div class="container">
@@ -47,43 +47,67 @@
 				<div class="spec">
 					감독 : ${movie.mo_director }<br> 배우 : ${movie.mo_actor }<br>
 					장르 : ${movie.mo_genre }<br> 기본 : ${movie.mo_age },${movie.mo_playTime }<br>
-					결과 : ${like.mo_number }
+					테스트 : ${listMovie.mo_age }<br>
 				</div>
 			</div>
 			<div class="ect_box">
 				<button type="button" class="like">관심</button>
-
-
-
 				<button type="button" class="resulvation">예매하기</button>
-			
-						<button type="button" class="recommendation"
-							id="recommendationUnLike"  onclick="updateLike()">추천</button>
-				
-						<button type="button" class="recommendation"
-							id="recommendationLike"  onclick="updateLike()">추천</button>
-				
+
+
+				<button type="button" class="recommendation" id="recommendationLike" 
+					onclick="recommendationUpdate()" >추천</button>
+
+
 			</div>
 		</div>
 </body>
 
 <script>
-	$(document).ready(function() {
-	 &('.recommendation').on('click',function(){
-		 
-		$.ajax({
-			type:'post',
-			url:"updateMoiveLike",
-			success:function(result){
-				
-			}
-			
-		}) 
-	 })
-	
+
+/* 	function recommendationUpdate(Mo_number,M_id){
+		alert("Mo_number, M_id->"+M_id);
 		
-	}
-	})
+	} */
+
+		
+		
+function recommendationUpdate(){ 
+		
+		var mo_num = ${movie.mo_number};
+		var m_num = "${member.m_id}";
+		
+		     $.ajax({
+		            type : "POST",  
+		            url : "/updateLike",       
+		            data : {'mo_number':mo_num, 'm_id':m_num },
+	                error:function(request, status, error){
+		        		alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+
+		        	},
+		            success : function(data) {
+		            	
+		                    if(data == 0){
+		                    	alert("추천완료.");
+		                    	location.reload();
+		                    	$('#recommendationLike').attr("style", "background: red;");
+		                    }
+		                    else if (data == 1){
+		                     alert("추천취소");
+		                    	location.reload();
+
+		                }
+		            }
+		        });
+}
+		
+
+	
+	
+	
+	
+
+
 </script>
 
 
