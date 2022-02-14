@@ -82,15 +82,25 @@ a {
 </head>
 <body>
 <div class="logo">
-	<a href="#">
+	<a href="main">
 		<img src="/img/logo1.png" style="" width="250px" height="100">
 	</a>
 </div>
-<div class="login_logout">
-<!--  	<i class="far fa-smile" style="font-size: 16px;"></i>&nbsp;	-->
-		<a href="#">Login </a>&nbsp;|&nbsp; 
-		<a href="#">Join</a>
-	</div>	
+<c:choose>
+ <c:when test="${empty userName}">
+	<div class="loginJoin">
+		<a href="loginForm">Login </a>&nbsp;|&nbsp; 
+		<a href="terms">Join</a>
+	</div>
+</c:when>
+<c:otherwise>
+	<div class="myPaygeLogout">
+		<i class="fas fa-user" style="font-size: 15px;"></i>
+		<a href="myPage">[${userName}님]</a>
+		<a href="logout">Logout</a>
+	</div>
+</c:otherwise>	
+</c:choose>
 
 <nav class="top_menu">
 	<ul>
@@ -98,8 +108,12 @@ a {
 		<li><a class="menuLink" href="movieRecommendList">추천영화</a></li>
 		<li><a class="menuLink" href="#">공지사항</a></li>
 		<li><a class="menuLink" href="#">고객센터</a></li>
-		<li><i class="fas fa-search" style="font-size: 15px;" onclick="search()"></i>&nbsp;
-		<input id="search" type="search" style="width: 100px;" placeholder="검색" ></li>
+		<li><i class="fas fa-search" style="font-size: 15px;"></i>&nbsp;
+		<input type="text" name="mo_title" id="mo_title" style="width: 100px;" placeholder="통합 검색" 
+			   required oninvalid="this.setCustomValidity('검색어를 입력해주세요.')"
+			   oninput = "setCustomValidity('')"/>	
+		<input type="hidden" name="bbs_title" id="bbs_title">		
+		<input type="submit" class="submitBtn" value="검색" onclick="getInputValue();"></li>
 	</ul>
 </nav>
 </body>

@@ -36,7 +36,7 @@ background-color: white;
 		<br>
 		<div class="wrap-movie-detail">
 			<div class="box-image">
-				<img class="detail-image" src="/${movie.mo_filename }" alt="">
+				<img class="detail-image" src="/${movie.mo_fileName }" alt="">
 			</div>
 			<div class="box-content">
 				<div class="title">

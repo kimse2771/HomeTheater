@@ -35,11 +35,10 @@ public class SE_Controller {
 		return principal.getName();
 	}
 
-	@RequestMapping(value = "main")
-	public String main() {
-		System.out.println("SE_Contorller main Start...");
-		return "main";
-	}
+	/*
+	 * @RequestMapping(value = "main") public String main() {
+	 * System.out.println("SE_Contorller main Start..."); return "main"; }
+	 */
 
 	@RequestMapping(value = "movieList")
 	public String movieList(Model model) {

@@ -6,14 +6,14 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Movie {
-	int mo_number;
-	String mo_title;  
-	String mo_director; 
-	String mo_actor;   
-	String mo_genre;   
-	String mo_age;      
-	String mo_playTime; 
-	String mo_openDate; 
-	int mo_recommendation;
-	String mo_filename;
+    private int mo_number;
+    private String mo_title;
+    private String mo_director;
+    private String mo_actor;
+    private String mo_genre;
+    private String mo_age;
+    private String mo_playTime;
+    private String mo_openDate;
+    private int mo_recommendation;
+    private String mo_fileName;
 }

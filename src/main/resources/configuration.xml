@@ -10,5 +10,17 @@
 		<typeAlias alias="Member"
 			type="com.oracle.HomeTheater.model.Member" />
 
+		<typeAlias type="com.oracle.HomeTheater.model.Bbs"
+			alias="Bbs" />
+
+
+		<typeAlias type="com.oracle.HomeTheater.model.ChoiceMovie"
+			alias="ChoiceMovie" />
+
+		<typeAlias type="com.oracle.HomeTheater.model.Reservation"
+			alias="Reservation" />
+
+		<typeAlias type="com.oracle.HomeTheater.model.SeatandTime"
+			alias="SeatandTime" />
 	</typeAliases>
 </configuration>
