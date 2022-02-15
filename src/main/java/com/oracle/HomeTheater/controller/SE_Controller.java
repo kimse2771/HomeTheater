@@ -41,8 +41,9 @@ public class SE_Controller {
 	 */
 
 	@RequestMapping(value = "movieList")
-	public String movieList(Model model) {
+	public String movieList(HttpServletRequest request,Model model) {
 		System.out.println("SE_Contorller main Start...");
+		
 		List<Movie> listMovie = ses.listMovie();
 		model.addAttribute("listMovie", listMovie);
 		return "SE_views/SE_movieList";

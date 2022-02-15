@@ -80,6 +80,7 @@ public class CH_MemberJpaController {
 		session.setAttribute("sessionId", memberVO.getM_id());
 		model.addAttribute("sessionId",memberVO.getM_id());
 		model.addAttribute("userName",memberVO.getM_name());
+		
 		return "main";
 	}
 	
