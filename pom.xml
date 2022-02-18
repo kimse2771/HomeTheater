@@ -17,8 +17,9 @@
 	<properties>
 		<java.version>11</java.version>
 	</properties>
+	
 	<dependencies>
-		<dependency>
+			<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
@@ -88,8 +89,25 @@
          <artifactId>commons-lang3</artifactId>
          <version>3.4</version>
       </dependency>
-	</dependencies>
+      
+      <!-- 첨부파일 START-->
+<!-- MultipartHttpServletRequset -->
+ <dependency>
+	 <groupId>commons-io</groupId>
+	 <artifactId>commons-io</artifactId>
+	 <version>2.0.1</version>
+ </dependency>
+ 
+ <dependency>
+	 <groupId>commons-fileupload</groupId>
+	 <artifactId>commons-fileupload</artifactId>
+	 <version>1.2.2</version>
+ </dependency>
 
+<!-- 첨부파일 END -->
+      
+      
+	</dependencies>
 	<build>
 		<plugins>
 			<plugin>

@@ -88,5 +88,32 @@ public class SE_ServiceImpl implements SE_Service {
 		return movieList;
 	}
 
+	@Override
+	public int adminMovieAdd(Movie movie) {
+		System.out.println("SE_ServiceImpl adminMovieAdd Start..." );
+		
+		int result = 0;
+		
+		result = sd.adminMovieAdd(movie);
+
+		return result;
+	}
+
+	@Override
+	public int adminMovieUpdate(Movie movie) {
+		System.out.println("SE_ServiceImpl adminMovieUpdate ...");
+		int result = 0;
+		result = sd.adminMovieUpdate(movie);
+		return result;
+	}
+
+	@Override
+	public int adminMovieDelete(int mo_number) {
+	    System.out.println("SE_ServiceImpl adminMovieDelete ...");
+		int result = 0;
+		result = sd.adminMovieDelete(mo_number);
+		return result;
+	}
+
 	
 }

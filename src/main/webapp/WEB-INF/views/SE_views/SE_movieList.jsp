@@ -23,10 +23,11 @@
 		<br>
 		<c:if test="${sessionScope.sessionId == 'admin'}">
 			<div class="admin_button">
-				<button type="button" class="movie_button" id="movieAdd"><a href="adminMovieAdd">
+				<button type="button" class="movie_button" id="movieAdd" href =location.href='adminMovieAddForm'>
 					영화 등록</a></button>
 			</div>
-		</c:if>
+	</c:if> 
+				
 
 
 		<ul>

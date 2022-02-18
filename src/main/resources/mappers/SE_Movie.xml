@@ -41,4 +41,23 @@ DELETE FROM movieLike
 select * from Movie order by mo_recommendation DESC
 </select>
 
+<insert id="SE_InsMovie" parameterType="Movie" useGeneratedKeys="false">
+
+insert into Movie(mo_number,mo_title,mo_director,mo_actor,mo_genre,mo_age,mo_playTime,mo_openDate,mo_recommendation,mo_fileName) values(movie_seq.nextval, #{mo_title}, #{mo_director},#{mo_actor},#{mo_genre},#{mo_age},#{mo_playTime},#{mo_openDate},#{mo_recommendation},#{mo_fileName} )
+</insert>
+
+<update id="SE_UpdMovie" parameterType="Movie">
+	 update Movie set mo_title=#{mo_title}, mo_director=#{mo_director}, mo_actor=#{mo_actor},
+				    mo_genre=#{mo_genre}, 
+				    mo_age=#{mo_age}, mo_playTime=#{mo_playTime},  
+	                mo_openDate=#{mo_openDate} ,mo_recommendation=#{mo_recommendation},mo_fileName=#{mo_fileName}
+	 where mo_number=#{mo_number}
+
+</update>
+
+<delete id="SE_delMovie" parameterType="int">
+delete from Movie  where mo_number=#{mo_number}
+
+</delete>
+
 </mapper>

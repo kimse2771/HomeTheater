@@ -136,6 +136,41 @@ public class SE_DaoImpl implements SE_Dao {
 		return RecommendMovieList;
 	}
 
-	
+	@Override
+	public int adminMovieAdd(Movie movie) {
+		int result = 0;
+		System.out.println("SE_DaoImpl adminMovieAdd Start ..." );
+		try {
+			result = session.insert("SE_InsMovie",movie);
+			System.out.println("daoresult :"+result);
+		} catch (Exception e) {
+			System.out.println("SE_DaoImpl adminMovieAdd Exception->"+e.getMessage());
+		}
+		return result;
+	}
 
+	@Override
+	public int adminMovieUpdate(Movie movie) {
+		System.out.println("SE_DaoImpl adminMovieUpdate start..");
+		int result = 0;
+		try {
+			result  = session.update("SE_UpdMovie",movie);
+		} catch (Exception e) {
+			System.out.println("SE_DaoImpl adminMovieUpdate Exception->"+e.getMessage());
+		}
+		return result;
+
+	}
+
+	@Override
+	public int adminMovieDelete(int mo_number) {
+		System.out.println("SE_DaoImpl adminMovieDelete start..");
+		int result = 0;
+		try {
+			result  = session.update("SE_delMovie",mo_number);
+		} catch (Exception e) {
+			System.out.println("SE_DaoImpl adminMovieDelete Exception->"+e.getMessage());
+		}
+		return result;
+	}
 }

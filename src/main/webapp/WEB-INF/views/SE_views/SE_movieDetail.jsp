@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <link rel="stylesheet"
@@ -27,6 +28,20 @@ background-color: white;
 
 
 </style>
+<script>
+function movieDelete(){
+	if (confirm("이 영화를 삭제하겠습니까?")) {
+	    // 확인 버튼 클릭 시 동작
+	    alert("영화를 삭제했습니다.");
+	    location.href='adminMovieDelete?mo_number=${movie.mo_number}'
+	} else {
+	    // 취소 버튼 클릭 시 동작
+	    alert("삭제를 취소했습니다.");
+	}
+	
+}
+
+</script>
 <body>
 	<div class="container">
 
@@ -50,29 +65,76 @@ background-color: white;
 					테스트 : ${listMovie.mo_age }<br>
 				</div>
 			</div>
+			
+			<c:choose>
+			<c:when test="${sessionScope.sessionId == 'admin'}">
+			<div class="admin_btn_box">
+			<button type="button" class="admin_btn" id="movieUpdate" onclick="location.href='adminMovieUpdateForm?mo_number=${movie.mo_number}'">수정</button>
+			<button type="button" class="admin_btn" id ="movieDelete" onclick="movieDelete()">삭제</button>
+			</div>
+			</c:when>
+			<c:otherwise>
 			<div class="ect_box">
 				<button type="button" class="like">관심</button>
 				<button type="button" class="resulvation">예매하기</button>
 
-
-				<button type="button" class="recommendation" id="recommendationLike" 
-					onclick="recommendationUpdate()" >추천</button>
-
-
+				<button type="button" class="recommendation" id="recommendationLike" >추천</button>
 			</div>
+			
+			</c:otherwise>
+			
+			</c:choose>
+
 		</div>
 </body>
 
 <script>
+	
+		$(document).ready(function () {
+			var likecheck = ${check};
+			
+			 if(likecheck>0) {
+				 $('#recommendationLike').attr("style", "background: red;");
+		        }
 
-/* 	function recommendationUpdate(Mo_number,M_id){
-		alert("Mo_number, M_id->"+M_id);
-		
-	} */
+			 $(".recommendation").on("click", function () {
+				 <c:choose>
+					<c:when test="${empty sessionScope.sessionId }">
+					alert("로그인해주시길 바랍니다.");
+					</c:when>
+					<c:otherwise>
+					var mo_num = ${movie.mo_number};
+					var m_num = "${member.m_id}";
+					
+					     $.ajax({
+					            type : "POST",  
+					            url : "/updateLike",       
+					            data : {'mo_number':mo_num, 'm_id':m_num },
+				                error:function(request, status, error){
+					        		alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 
-		
-		
-function recommendationUpdate(){ 
+					        	},
+					            success : function(data) {
+					            	
+					                    if(data == 0){
+					                    	alert("추천완료.");
+					                    	location.reload();
+					                    	$('#recommendationLike').attr("style", "background: red;");
+					                    }
+					                    else if (data == 1){
+					                     alert("추천취소");
+					                    	location.reload();
+
+					                }
+					            }
+					        });
+					     </c:otherwise>
+					     </c:choose>
+				 
+			 })
+			
+		})
+/* function recommendationUpdate(){ 
 		
 		var mo_num = ${movie.mo_number};
 		var m_num = "${member.m_id}";
@@ -99,7 +161,7 @@ function recommendationUpdate(){
 		                }
 		            }
 		        });
-}
+} */
 		
 
 	
