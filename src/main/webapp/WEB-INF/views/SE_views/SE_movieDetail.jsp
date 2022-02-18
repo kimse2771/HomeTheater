@@ -62,7 +62,6 @@ function movieDelete(){
 				<div class="spec">
 					감독 : ${movie.mo_director }<br> 배우 : ${movie.mo_actor }<br>
 					장르 : ${movie.mo_genre }<br> 기본 : ${movie.mo_age },${movie.mo_playTime }<br>
-					테스트 : ${listMovie.mo_age }<br>
 				</div>
 			</div>
 			
