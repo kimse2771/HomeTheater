@@ -17,7 +17,7 @@
 	<div class="subject">
  		<b>관심영화</b>
  	</div>
- 	<c:forEach var="movie" items="${TotalList }">
+ 	<c:forEach var="movie" items="${findInterstMovie }">
  		${movie.mo_title}
  		${movie.mo_director}
  		${movie.mo_actor}

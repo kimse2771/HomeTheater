@@ -227,7 +227,7 @@ label{
 <body>
 <div class="container">
  <div class="content">
-  <%@ include file="../header.jsp" %>
+ <%@ include file="../header.jsp" %>
   	<div class="subject">
   	<b id="header">회원가입</b>
   	</div>

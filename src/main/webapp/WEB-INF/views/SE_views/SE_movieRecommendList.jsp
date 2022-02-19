@@ -11,7 +11,14 @@
 <head>
 <meta charset="UTF-8">
 <title>추천영화</title>
+<style>
+.list_image{
+	border: 1px solid black;
+	width: 200px;
+	height: 250px;
+}
 
+</style>
 
 </head>
 <body>

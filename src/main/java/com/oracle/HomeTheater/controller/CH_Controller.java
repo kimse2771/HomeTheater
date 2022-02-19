@@ -173,7 +173,6 @@ public class CH_Controller {
         List<ChoiceMovie> GetMoNumList = cs.getMoNumList(choice);
         // 반복문을 돌려 얻어낸 영화정보를 저장할 List(addAll을 사용하기위해 arrayList로 선언)
         ArrayList<Movie> TotalList = new ArrayList<Movie>();
-
         List<Movie> InterestMovieList = null;
         // 반복문을 통해서 GetMoNumList값 추출후 TotalList로 옮겨주는 작업
         for(int i=0;i<GetMoNumList.size();i++) {

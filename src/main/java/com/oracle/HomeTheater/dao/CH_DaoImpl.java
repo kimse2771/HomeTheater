@@ -180,6 +180,7 @@ public class CH_DaoImpl implements CH_Dao {
 		List<ChoiceMovie> GetMoNumList = null;
 		try {
 			GetMoNumList = session.selectList("CH_GetMoNumList", choice);
+			System.out.println("getMoNumList size : "+GetMoNumList.size());
 		} catch (Exception e) {
 			System.out.println("CH_DaoImpl getMoNumList Excetption->"+e.getMessage());
 		}
@@ -192,6 +193,7 @@ public class CH_DaoImpl implements CH_Dao {
 		List<Movie> InterestMovieList = null;
 		try {
 			InterestMovieList = session.selectList("CH_InterestMovieList", movie);
+			System.out.println("InterestMovieList size : "+InterestMovieList.size());
 		} catch (Exception e) {
 			System.out.println("CH_DaoImpl InterestMovieList Excetption->"+e.getMessage());
 		}

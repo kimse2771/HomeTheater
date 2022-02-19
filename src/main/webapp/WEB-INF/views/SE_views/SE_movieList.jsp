@@ -4,16 +4,22 @@
 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="/css/SE_movieAdmin.css">
+<link rel="stylesheet" href="/css/SE_movieAdmin.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>리스트</title>
-<style></style>
+<title>영화 목록</title>
+<style>
+.list_image{
+	border: 1px solid black;
+	width: 200px;
+	height: 250px;
+}
+
+</style>
 </head>
 <body>
 	<div class="container">
@@ -23,12 +29,12 @@
 		<br>
 		<c:if test="${sessionScope.sessionId == 'admin'}">
 			<div class="admin_button">
-				<button type="button" class="movie_button" id="movieAdd" href =location.href='adminMovieAddForm'>
-					영화 등록</a></button>
+				<button type="button" class="movie_button" id="movieAdd"
+					href=location.href='adminMovieAddForm'>
+					영화 등록</a>
+				</button>
 			</div>
-	</c:if> 
-				
-
+		</c:if>
 
 		<ul>
 			<c:forEach var="movie" items="${listMovie }">
