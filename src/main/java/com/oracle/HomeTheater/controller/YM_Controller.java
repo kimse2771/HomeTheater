@@ -24,7 +24,7 @@ public class YM_Controller {
 	@Autowired
 	private YM_Service ymService;
 	
-
+	
 	
 //메인페이지 -> 공지사항클릭
 	@RequestMapping(value="YM_views/mainNotice")

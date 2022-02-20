@@ -11,6 +11,7 @@ import com.oracle.HomeTheater.model.Bbs;
 import com.oracle.HomeTheater.model.ChoiceMovie;
 import com.oracle.HomeTheater.model.Movie;
 import com.oracle.HomeTheater.model.Reservation;
+import com.oracle.HomeTheater.model.SeatandTime;
 
 @Repository
 public class CH_DaoImpl implements CH_Dao {
@@ -180,7 +181,6 @@ public class CH_DaoImpl implements CH_Dao {
 		List<ChoiceMovie> GetMoNumList = null;
 		try {
 			GetMoNumList = session.selectList("CH_GetMoNumList", choice);
-			System.out.println("getMoNumList size : "+GetMoNumList.size());
 		} catch (Exception e) {
 			System.out.println("CH_DaoImpl getMoNumList Excetption->"+e.getMessage());
 		}
@@ -193,7 +193,6 @@ public class CH_DaoImpl implements CH_Dao {
 		List<Movie> InterestMovieList = null;
 		try {
 			InterestMovieList = session.selectList("CH_InterestMovieList", movie);
-			System.out.println("InterestMovieList size : "+InterestMovieList.size());
 		} catch (Exception e) {
 			System.out.println("CH_DaoImpl InterestMovieList Excetption->"+e.getMessage());
 		}
@@ -212,6 +211,64 @@ public class CH_DaoImpl implements CH_Dao {
 		return checkReservationInfo;
 	}
 
+	@Override
+	public List<SeatandTime> searchSeatInfo(SeatandTime seatTime) {
+		System.out.println("CH_DaoImpl searchSeatInfo Start...");
+		List<SeatandTime> searchSeatInfo = null;
+		try {
+			searchSeatInfo = session.selectList("CH_SearchSeatInfo", seatTime);
+		} catch (Exception e) {
+			System.out.println("CH_DaoImpl searchSeatInfo Excetption->"+e.getMessage());
+		}
+		return searchSeatInfo;
+	}
+
+	@Override
+	public List<Member> memberList(Member member) {
+		System.out.println("CH_DaoImpl memberList Start...");
+		List<Member> memberList = null;
+		try {
+			memberList = session.selectList("CH_MemberList", member);
+		} catch (Exception e) {
+			System.out.println("CH_DaoImpl memberList Excetption->"+e.getMessage());
+		}
+		return memberList;
+	}
+
+	@Override
+	public int adminUpdateMember(Member member) {
+		int update = 0;
+		System.out.println("CH_DaoImpl adminUpdateMember Start...");
+		try {
+			update = session.update("CH_AdminUpdateMember", member);
+		} catch (Exception e) {
+			System.out.println("CH_DaoImpl adminUpdateMember Excetption->"+e.getMessage());
+		}
+		return update;
+	}
+
+	@Override
+	public List<Reservation> reservationList(Reservation reservation) {
+		System.out.println("CH_DaoImpl reservationList Start...");
+		List<Reservation> reservationList = null;
+		try {
+			reservationList = session.selectList("CH_ReservationList", reservation);
+		} catch (Exception e) {
+			System.out.println("CH_DaoImpl reservationList Excetption->"+e.getMessage());
+		}
+		return reservationList;
+	}
+
+
+
+
+
+
+	
+
+
+
+	
 
 
 
@@ -220,19 +277,9 @@ public class CH_DaoImpl implements CH_Dao {
 
 
 
+	
+	
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+	
 }

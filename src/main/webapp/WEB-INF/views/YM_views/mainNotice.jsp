@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
@@ -10,7 +11,6 @@
 <title>공지사항페이지야~~~</title>
 
 <style type="text/css">
-
 /* 공통부분 ------------------------------------------------*/
 	.wrapper{
 			display: flex;
@@ -22,7 +22,6 @@
 	.hidden{
 		 display: none;
 	}
-
 /* visualbox부분 --------------------------------------------------- */
 	#YM_noticeVisualBox{
 		height: 170px;
@@ -66,7 +65,6 @@
 			
 		}
 /* ------------------------------------------------------ */	
-
 	
 	
 </style>
@@ -76,7 +74,6 @@
 <body>
 
 <!-- main header -->
-<div class="container">
 <div id="YM_noticeHeaderBox">
 	<%@ include file="../header.jsp"%>
 </div>
@@ -88,7 +85,7 @@
 			<h3 id="YM_textChangeL"></h3>	
 			
 				<script type="text/javascript">	
-					if(${bbs.bbs_category}===2){
+					if(${bbs.bbs_category}==2){
 						document.getElementById("YM_textChangeL").innerHTML = "QnA";
 					}else{
 						document.getElementById("YM_textChangeL").innerHTML = "공지사항";
@@ -188,7 +185,7 @@
 <div id="YM_noticeFooterBox">
 	<%@ include file="../footer.jsp"%>
 </div>
-</div>
+	
 	
 
 

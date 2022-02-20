@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +12,6 @@
 		width: 1000px;
 		border:1px solid;
 	}
-
 	#YM_boardTitle{
 		height: 30px;	
 	}
@@ -41,7 +41,7 @@
 		</div>
 		<div id="YM_noticeContentBox">
 			<div id="YM_board_write">
-				<h3 class="hidden">글을 작성하는 공간입니다.</h3>
+				<h3 class="hidden">글을 작성하는 공간입니다.</ h3>
 				<!-- <form action="mainNotice"> -->
 				<form action="noticeWrite"  method="post">
 					 <input type="hidden" name="bbs_category" value="${bbs.bbs_category}">
@@ -56,7 +56,7 @@
 						 <textarea name="bbs_content"  placeholder="내용" maxlength="250" required></textarea>
 					</div>
 					<div>
-						<button type="submit" onclick="location.href='mainNotice'">글 작성</button>
+						<button type="submit" onclick="location.href='mainNotice">글 작성</button>
 					</div>
 					
 				</form>

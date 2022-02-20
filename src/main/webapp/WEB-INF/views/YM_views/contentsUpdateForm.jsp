@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +12,6 @@
 		width: 1000px;
 		border:1px solid;
 	}
-
 	#YM_boardTitle{
 		height: 30px;	
 	}
@@ -30,7 +30,6 @@
 <body>
 
 <!-- main header -->
-<div class="container">
 <div id="YM_noticeHeaderBox">
 	<%@ include file="../header.jsp"%>
 </div>
@@ -67,7 +66,7 @@
 					
 			</div>
 		</div>
-
+		
 	</main>
 </div>
 
@@ -78,6 +77,6 @@
 <div id="YM_noticeFooterBox">
 	<%@ include file="../footer.jsp"%>
 </div>
-</div>
+
 </body>
 </html>

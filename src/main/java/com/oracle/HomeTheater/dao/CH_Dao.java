@@ -7,6 +7,7 @@ import com.oracle.HomeTheater.model.Bbs;
 import com.oracle.HomeTheater.model.ChoiceMovie;
 import com.oracle.HomeTheater.model.Movie;
 import com.oracle.HomeTheater.model.Reservation;
+import com.oracle.HomeTheater.model.SeatandTime;
 
 
 public interface CH_Dao {
@@ -27,6 +28,10 @@ public interface CH_Dao {
 	List<ChoiceMovie> getMoNumList(ChoiceMovie choice);
 	List<Movie> InterestMovieList(Movie movie);
 	List<Reservation> checkReservationInfo(Reservation reservation);
+	List<SeatandTime> searchSeatInfo(SeatandTime seatTime);
+	List<Member> memberList(Member member);
+	int adminUpdateMember(Member member);
+	List<Reservation> reservationList(Reservation reservation);
 
 
 }
