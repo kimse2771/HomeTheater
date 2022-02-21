@@ -1,8 +1,10 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	
+
+<!-- <link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -11,31 +13,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet"
+	href="css/movieDetail.css">	
 <title>상세정보</title>
+
 </head>
-<style>
-.box-image {
-	float: left;
-}
 
-.wrap-movie-detail {
-	height: 400px;
-}
-
-#recommendationUnLike {
-	background-color: white;
-}
-
-.title {
-	
-}
-
-.detail-image {
-	border: 1px solid black;
-	width: 200px;
-	height: 250px;
-}
-</style>
 <script>
 function movieDelete(){
 	if (confirm("이 영화를 삭제하겠습니까?")) {
@@ -62,17 +45,17 @@ function movieDelete(){
 				<img class="detail-image" src="/${movie.mo_fileName }" alt="">
 			</div>
 			<div class="box-content">
-				<div class="title">
-					<strong>${movie.mo_title }</strong>
-					<hr>
+				<div class="movie-title" >
+					${movie.mo_title }
 				</div>
 				<div class="ect_detail">추천 수: ${movie.mo_recommendation }</div>
+				<hr>
 				<div class="spec">
-					감독 : ${movie.mo_director }<br> 배우 : ${movie.mo_actor }<br>
-					장르 : ${movie.mo_genre }<br> 기본 : ${movie.mo_age },${movie.mo_playTime }<br>
+					감독&nbsp :&nbsp ${movie.mo_director }<br> 배우 &nbsp: &nbsp${movie.mo_actor }<br>
+					장르 &nbsp:&nbsp ${movie.mo_genre }<br> 기본 &nbsp: &nbsp${movie.mo_age },${movie.mo_playTime }<br>
 				</div>
 			</div>
-
+	<div class= "btn_box">
 			<c:choose>
 				<c:when test="${sessionScope.sessionId == 'admin'}">
 					<div class="admin_btn_box">
@@ -84,16 +67,16 @@ function movieDelete(){
 				</c:when>
 				<c:otherwise>
 					<div class="ect_box">
-						<button type="button" class="choiceMovie">관심</button>
-						<button type="button" class="reservation">예매하기</button>
-						<button type="button" class="recommendation"
-							id="recommendationLike">추천</button>
+						<button type="button" class = "ect-btn" id="choiceMovie" style="font-size: 15px;">관심</button>
+						<button type="button" class = "ect-btn" id="reservation">예매하기</button>
+						<button type="button" class = "ect-btn" id="recommendationLike">추천</button>
 					</div>
 
 				</c:otherwise>
 
 			</c:choose>
 
+		</div>
 		</div>
 </body>
 
@@ -108,10 +91,10 @@ function movieDelete(){
 		        }
 
 			 if(choicecheck>0) {
-				 $('.choiceMovie').attr("style", "background: black; color : white;");
+				 $('#choiceMovie').attr("style", "background: black; color : white;");
 		        }
 
-			 $(".recommendation").on("click", function () {
+			 $("#recommendationLike").on("click", function () {
 				 <c:choose>
 					<c:when test="${empty sessionScope.sessionId }">
 					alert("로그인해주시길 바랍니다.");
@@ -147,7 +130,7 @@ function movieDelete(){
 				 
 			 })
 			
-			 $(".reservation").on("click", function () {
+			 $("#reservation").on("click", function () {
 				 <c:choose>
 					<c:when test="${empty sessionScope.sessionId }">
 					alert("로그인해주시길 바랍니다.");
@@ -161,7 +144,7 @@ function movieDelete(){
 				 
 			})
 			
-			 $(".choiceMovie").on("click", function () {
+			 $("#choiceMovie").on("click", function () {
 				 <c:choose>
 					<c:when test="${empty sessionScope.sessionId }">
 						alert("로그인해주시길 바랍니다.");
