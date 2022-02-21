@@ -4,31 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="css/movieAdmin.css">	
 <title>영화 등록</title>
-<style>
 
-.movieInfo-form{
-margin-left : 30%;
-text-align: left;}
 
-.movieInfoName {
-
-	text-align: left;
-	display: inline-block;
-width: 80px;
-
-}
-
-.btn{
-text-align: center;
-}
-
-.movieInfo{
-	text-align: left;
-	display: inline-block;
-
-}
-</style>
 </head>
 <body>
 	<div class="container">
