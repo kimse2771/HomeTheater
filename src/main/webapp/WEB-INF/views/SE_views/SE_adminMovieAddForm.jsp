@@ -6,13 +6,27 @@
 <meta charset="UTF-8">
 <title>영화 등록</title>
 <style>
-label {
-	margin-right: 30px;
-	float: left;
+
+.movieInfo-form{
+margin-left : 20%;
+text-align: left;}
+
+.movieInfoName {
+margin-right: 30px;
+	text-align: left;
+	display: inline-block;
+	width: 80px;
+
 }
 
-.movieInfo {
-	float: right;
+.btn{
+text-align: center;
+}
+
+.movieInfo{
+	text-align: left;
+	display: inline-block;
+
 }
 </style>
 </head>
@@ -23,34 +37,57 @@ label {
 		<h1>______</h1>
 		<h2 class="main_title">영화 등록</h2>
 		<br>
+		<div class="movieInfo-form"> 
 		<form action="adminMovieAdd" name="addMovie" method="post"  enctype="multipart/form-data">
 			<ul>
-				<li><label>영화 제목</label><input type="text" class="movieInfo"
-					id="movieTitle" name="mo_title"></li>
+				<li><label class="movieInfoName">영화 제목</label>
+				<div class="movieInfo" >
+				<input type="text" 	id="movieTitle" name="mo_title"></div></li>
+				
 				<br>
-				<li><label>영화 감독</label><input type="text" class="movieInfo"
-					id="movieDiretor" name="mo_director"></li>
+				<li><label class="movieInfoName">영화 감독</label>
+				<div class="movieInfo" >
+				<input type="text" id="movieDiretor" name="mo_director"></div></li>
+			
 				<br>
-				<li><label>배우</label><input type="text" class="movieInfo"
-					id="movieActor" name="mo_actor"></li>
+				<li><label class="movieInfoName">배우</label>
+				<div class="movieInfo" >
+				<input type="text"	id="movieActor" name="mo_actor"></div></li>
 				<br>
-				<li><label>장르</label><input type="text" class="movieInfo"
-					id="movieGenre" name="mo_genre"></li>
+				
+				<li><label class="movieInfoName">장르</label>
+				<div class="movieInfo" >
+				<input type="text" id="movieGenre" name="mo_genre">
+					</div></li>
 				<br>
-				<li><label>등급</label><input type="text" class="movieInfo"
-					id="movieAge" name="mo_age"></li>
+				<li><label class="movieInfoName">등급</label>
+				<div class="movieInfo" >
+				<input type="text" 
+					id="movieAge" name="mo_age">
+					</div></li>
 				<br>
-				<li><label>상영시간</label><input type="text" class="movieInfo"
-					id="moviePlayTime" name="mo_playTime"></li>
+				<li><label class="movieInfoName">상영시간</label>
+				<div class="movieInfo" >
+				<input type="text" 
+					id="moviePlayTime" name="mo_playTime">
+					</div></li>
 				<br>
-				<li><label>개봉일</label><input type="text" class="movieInfo"
-					id="movieOpenDate" name="mo_openDate"></li>
+				<li><label class="movieInfoName">개봉일</label>
+				<div class="movieInfo" >
+				<input type="text"
+					id="movieOpenDate" name="mo_openDate">
+					</div></li>
 				<br>
-				<li><label>추천수</label><input type="text" class="movieInfo"
-					id="movieRecommendation" name="mo_recommendation"></li>
+				<li><label class="movieInfoName">추천수</label>
+				<div class="movieInfo" >
+				<input type="text"
+					id="movieRecommendation" name="mo_recommendation">
+					</div></li>
 				<br>
-				<li><label>포스터</label><input type="file" class="movieInfo"
-					id="movieFileName" name="file"></li>
+				<li><label class="movieInfoName">포스터</label>
+				<div class="movieInfo" >
+				<input type="file" 
+					id="movieFileName" name="file"></div></li>
 				<br>
 	    <input type="hidden" name="path" value="${pageContext.request.contextPath}/resources/static/Img/"> 
 			</ul>
@@ -60,6 +97,7 @@ label {
 				<button type="button" id="movieAddCancle" onclick="history.back()">취소</button>
 			</div>
 		</form>
+		</div>
 	</div>
 </body>
 <script>
