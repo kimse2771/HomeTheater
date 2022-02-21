@@ -8,14 +8,14 @@
 <style>
 
 .movieInfo-form{
-margin-left : 20%;
+margin-left : 30%;
 text-align: left;}
 
 .movieInfoName {
-margin-right: 30px;
+
 	text-align: left;
 	display: inline-block;
-	width: 80px;
+width: 80px;
 
 }
 
