@@ -75,6 +75,8 @@ function movieDelete(){
 
 		</div>
 		</div>
+		<%@include file="../footer.jsp"%>
+		</div>
 </body>
 
 <script>
@@ -220,5 +222,5 @@ function movieDelete(){
 </script>
 
 
-<%@include file="../footer.jsp"%>
+
 </html>

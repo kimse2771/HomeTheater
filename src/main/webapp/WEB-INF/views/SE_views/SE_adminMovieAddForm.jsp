@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="css/movieAdmin.css">	
+<link rel="stylesheet" href="css/movieAdmin.css">
 <title>영화 등록</title>
 
 
@@ -71,14 +71,16 @@
 	    <input type="hidden" name="path" value="${pageContext.request.contextPath}/resources/static/Img/"> 
 			</ul>
 
-			<div class="btn">
+			<div class="adminBtn">
 				<button type="submit" value="등록" id="movieAdd" onclick="movieAddClick()">등록</button>
 				<button type="button" id="movieAddCancle" onclick="history.back()">취소</button>
 			</div>
 		</form>
 		</div>
+		<%@include file="../footer.jsp"%>
 	</div>
 </body>
+
 <script>
 
 function movieAddClick(){
@@ -91,18 +93,8 @@ function movieAddClick(){
 		</c:otherwise>
 	 </c:choose>
 }
-/* $("#movieAdd").on("click", function () {
-	 <c:choose>
-		<c:when test="${msg != null }">
-		alert("${msg}");
-		</c:when>
-		<c:otherwise>
-		alert("등록 되었습니다.");
-		     </c:otherwise>
-		     </c:choose>
-	 
-})
- */
+
+ 
 </script>
-<%@include file="../footer.jsp"%>
+
 </html>

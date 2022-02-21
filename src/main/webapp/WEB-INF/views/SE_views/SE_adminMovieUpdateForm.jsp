@@ -76,7 +76,7 @@
 
 				</ul>
 
-				<div class="btn">
+				<div class="adminBtn">
 					<button type="submit" value="수정" id="movieUpdate"
 						onclick="movieUpdateClick()">수정</button>
 					<button type="button" id="movieUpdateCancle"
@@ -84,6 +84,7 @@
 				</div>
 			</form>
 		</div>
+		<%@include file="../footer.jsp"%>
 	</div>
 </body>
 
