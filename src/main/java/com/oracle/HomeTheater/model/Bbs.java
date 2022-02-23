@@ -1,6 +1,5 @@
 package com.oracle.HomeTheater.model;
 
-import java.util.List;
 
 import lombok.Getter;
 import lombok.Setter;

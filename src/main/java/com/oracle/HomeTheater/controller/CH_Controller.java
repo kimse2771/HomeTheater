@@ -3,6 +3,7 @@ package com.oracle.HomeTheater.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -28,10 +29,12 @@ import com.oracle.HomeTheater.service.CH_Service;
 public class CH_Controller {
 	@Autowired
 	private CH_Service cs;
-	
+
 	@RequestMapping(value = "main")
-	public String main() {
+	public String main(Bbs bbs, Model model) {
 		System.out.println("CH_Contorller main Start...");
+		List<Bbs> mainBbsList = cs.mainBbsList(bbs);
+		model.addAttribute("mainBbsList",mainBbsList);
 		return "main";
 	}
 	
@@ -211,14 +214,12 @@ public class CH_Controller {
 		return "CH_view/CH_MemberManagement";
 	}
 	
-	// 관리자 회원업데이트
+	// 관리자 회원수정
 	@PostMapping(value = "adminUpdateMember")
 	@ResponseBody
 	public int adminUpdateMember(Member member,Model model) {
 		System.out.println("CH_Contorller memberUpdate Start...");
-		System.out.println("before="+member);
 		int update = cs.adminUpdateMember(member);
-		model.addAttribute("update",update);
 		return update;
 	}
 	
@@ -237,6 +238,16 @@ public class CH_Controller {
 		List<Reservation> reservationList = cs.reservationList(reservation);
 		model.addAttribute("reservationList",reservationList);
 		return "CH_view/CH_ReservationList";
+	}
+	
+	// 관리자 예매수정
+	@PostMapping(value = "adminUpdateReservation")
+	@ResponseBody
+	public int adminUpdateReservation(Reservation reservation) {
+		System.out.println("CH_Contorller adminUpdateReservation Start...");
+		// 외래키 담은 테이블 수정할때 제약조건 에러 발생 -> 오라클에서 alter table 테이블명 drop  CONSTRAINT SYS_번호; 하면 제약조건 삭제가능
+		int update = cs.adminUpdateReservation(reservation);
+		return update;
 	}
 	
 	

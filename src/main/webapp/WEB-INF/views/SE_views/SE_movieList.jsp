@@ -21,6 +21,11 @@
 
 </style>
 </head>
+
+<script type="text/javascript">
+
+
+</script>
 <body>
 	<div class="container">
 		<%@ include file="../header.jsp"%>
@@ -40,7 +45,7 @@
 			<c:forEach var="movie" items="${listMovie }">
 				<li><img class="list_image" src="/${movie.mo_fileName }" alt="">
 					<br> <a href="movieDetail?mo_number=${movie.mo_number }">
-						영화정보 </a>|<a href="#"> 상영시간 </a>|<a
+						영화정보 </a>|<a href="#" class = "movieTime-Btn" onclick="movieTimePopup(${movie.mo_number})"> 상영시간 </a>|<a
 					href="/reservation?mo_number=${movie.mo_number }"> 예매하기 </a></li>
 			</c:forEach>
 		</ul>
@@ -70,5 +75,18 @@
 		<%@ include file="../footer.jsp"%>
 	</div>
 </body>
+
+<%-- 영화 상영시간 팝업 --%>
+<script>
+function movieTimePopup(mo_number){
+	var url = "movieTimePopup?mo_number="+mo_number;
+	var name="movieTimePopup";
+	var option="width=600, height=600, left=100,top=50";
+	
+	window.open(url,name,option);
+	
+}
+	
+</script>
 
 </html>

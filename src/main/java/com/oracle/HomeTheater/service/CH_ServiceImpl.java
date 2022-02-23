@@ -175,6 +175,57 @@ public class CH_ServiceImpl implements CH_Service {
 		return reservationList;
 	}
 
+	@Override
+	public int adminUpdateReservation(Reservation reservation) {
+		int update = 0;
+		System.out.println("CH_ServiceImpl adminUpdateReservation Start...");
+		update = cd.adminUpdateReservation(reservation);
+		return update;
+	}
+
+	@Override
+	public List<Bbs> mainBbsList(Bbs bbs) {
+		System.out.println("CH_ServiceImpl mainBbsList Start...");
+		List<Bbs> mainBbsList = null;
+		mainBbsList = cd.mainBbsList(bbs);
+		return mainBbsList;
+	}
+
+	@Override
+	public List<Bbs> bbsSearchTotal(Bbs bbs) {
+		System.out.println("CH_ServiceImpl bbsSearchTotal Start...");
+		List<Bbs> bbsSearchTotal = null;
+		bbsSearchTotal = cd.bbsSearchTotal(bbs);
+		return bbsSearchTotal;
+	}
+
+	@Override
+	public List<Bbs> bbsSearchTitle(Bbs bbs) {
+		System.out.println("CH_ServiceImpl bbsSearchTitle Start...");
+		List<Bbs> bbsSearchTitle = null;
+		bbsSearchTitle = cd.bbsSearchTitle(bbs);
+		return bbsSearchTitle;
+	}
+
+	@Override
+	public List<Bbs> bbsSearchContent(Bbs bbs) {
+		System.out.println("CH_ServiceImpl bbsSearchContent Start...");
+		List<Bbs> bbsSearchContent = null;
+		bbsSearchContent = cd.bbsSearchContent(bbs);
+		return bbsSearchContent;
+	}
+
+	@Override
+	public List<Bbs> bbsSearchId(Bbs bbs) {
+		System.out.println("CH_ServiceImpl bbsSearchId Start...");
+		List<Bbs> bbsSearchId = null;
+		bbsSearchId = cd.bbsSearchId(bbs);
+		return bbsSearchId;
+	}
+
+
+	
+
 
 	
 	

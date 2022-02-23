@@ -4,7 +4,7 @@
 <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap" rel="stylesheet"><meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <script>
 	//input에 받은 text값을 bbs_title에도 넘겨주기위한 기능
@@ -16,7 +16,7 @@
 <title>header</title>
 <style>
 *{
-	font-family: 'Noto Serif KR', serif;
+	font-family: 'Noto Sans KR', sans-serif;
 }
 .container{
 	text-align: center;
@@ -78,6 +78,10 @@ a:hover{
 	border: 1px solid black;
     border-radius: 5px;
     font-size: 10px;
+}
+.submitBtn:hover{
+	background: black;
+	color: white;
 }
 </style>
 </head>

@@ -259,6 +259,80 @@ public class CH_DaoImpl implements CH_Dao {
 		return reservationList;
 	}
 
+	@Override
+	public int adminUpdateReservation(Reservation reservation) {
+		int update = 0;
+		System.out.println("CH_DaoImpl adminUpdateReservation Start...");
+		try {
+			update = session.update("CH_AdminUpdateReservation", reservation);
+		} catch (Exception e) {
+			System.out.println("CH_DaoImpl adminUpdateReservation Excetption->"+e.getMessage());
+		}
+		return update;
+	}
+
+	@Override
+	public List<Bbs> mainBbsList(Bbs bbs) {
+		System.out.println("CH_DaoImpl mainBbsList Start...");
+		List<Bbs> mainBbsList = null;
+		try {
+			mainBbsList = session.selectList("CH_MainBbsList", bbs);
+		} catch (Exception e) {
+			System.out.println("CH_DaoImpl mainBbsList Excetption->"+e.getMessage());
+		}
+		return mainBbsList;
+	}
+
+	@Override
+	public List<Bbs> bbsSearchTotal(Bbs bbs) {
+		System.out.println("CH_DaoImpl bbsSearchTotal Start...");
+		List<Bbs> bbsSearchTotal = null;
+		try {
+			bbsSearchTotal = session.selectList("CH_BbsSearchTotal", bbs);
+		} catch (Exception e) {
+			System.out.println("CH_DaoImpl bbsSearchTotal Excetption->"+e.getMessage());
+		}
+		return bbsSearchTotal;
+	}
+
+	@Override
+	public List<Bbs> bbsSearchTitle(Bbs bbs) {
+		System.out.println("CH_DaoImpl bbsSearchTitle Start...");
+		List<Bbs> bbsSearchTitle = null;
+		try {
+			bbsSearchTitle = session.selectList("CH_BbsSearchTitle", bbs);
+		} catch (Exception e) {
+			System.out.println("CH_DaoImpl bbsSearchTitle Excetption->"+e.getMessage());
+		}
+		return bbsSearchTitle;
+	}
+
+	@Override
+	public List<Bbs> bbsSearchContent(Bbs bbs) {
+		System.out.println("CH_DaoImpl bbsSearchContent Start...");
+		List<Bbs> bbsSearchContent = null;
+		try {
+			bbsSearchContent = session.selectList("CH_BbsSearchContent", bbs);
+		} catch (Exception e) {
+			System.out.println("CH_DaoImpl bbsSearchContent Excetption->"+e.getMessage());
+		}
+		return bbsSearchContent;
+	}
+
+	@Override
+	public List<Bbs> bbsSearchId(Bbs bbs) {
+		System.out.println("CH_DaoImpl bbsSearchId Start...");
+		List<Bbs> bbsSearchId = null;
+		try {
+			bbsSearchId = session.selectList("CH_BbsSearchId", bbs);
+		} catch (Exception e) {
+			System.out.println("CH_DaoImpl bbsSearchId Excetption->"+e.getMessage());
+		}
+		return bbsSearchId;
+	}
+
+
+
 
 
 
