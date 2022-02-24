@@ -16,8 +16,8 @@
 </head>
 <body>
 <h2 class="main_title">영화 상영시간</h2>
-<c:forEach var ="seatandTime" items="${seatandTimeList }">
-<button></button>
-</c:forEach>
+
 </body>
+
+
 </html>
