@@ -36,6 +36,7 @@
 .logo{
 	text-align: left;
 	margin-bottom: -20px;
+	
 }
 .top_menu{
 	text-align: center;
