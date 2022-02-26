@@ -1,7 +1,4 @@
-const addhidden = document.getElementById("form");
-const newp = document.createElement("p");
-const newp2 = document.createElement("h2");
-const newp3 = document.createElement("p");
+
 let discountratio = 1;
 let discountsum = 0;   //할인 총합 계산
 let nowamount = document.getElementById("nowamount").innerText;
@@ -58,4 +55,3 @@ const usepoint = () => {
         }
     }
 }
-

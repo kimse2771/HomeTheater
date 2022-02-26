@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -27,7 +26,6 @@ function movieDelete(){
 	}
 	
 }
-
 </script>
 <body>
 	<div class="container">
@@ -46,7 +44,7 @@ function movieDelete(){
 				<hr>
 				<div class="spec">
 					감독&nbsp :&nbsp ${movie.mo_director }<br> 배우 &nbsp:
-					&nbsp${movie.mo_actor }<br> 장르 &nbsp:&nbsp ${movie.mo_genre }<br>
+					&nbsp<a href="#" onclick="actorInfo(${movie.mo_number})">${movie.mo_actor}</a><br> 장르 &nbsp:&nbsp ${movie.mo_genre }<br>
 					기본 &nbsp: &nbsp${movie.mo_age },${movie.mo_playTime }<br>
 				</div>
 			</div>
@@ -79,21 +77,26 @@ function movieDelete(){
 		<%@include file="../footer.jsp"%>
 	</div>
 </body>
-
 <script>
-
-
+<%-- 영화배우 정보 팝업 --%>
+function actorInfo(mo_number){
+	var url = "actorInfo?mo_number="+mo_number;
+	var name="actorInfo";
+	var option="width=600, height=600, left=100,top=50";
+	
+	window.open(url,name,option);
+}
+</script>
+<script>
 		$(document).ready(function () {
 			var likecheck = ${check};
 			var choicecheck = ${choiceCheck};
 			 if(likecheck>0) {
 				 $('#recommendationLike').attr("style", "background: black; color : white;");
 		        }
-
 			 if(choicecheck>0) {
 				 $('#choiceMovie').attr("style", "background: black; color : white;");
 		        }
-
 			 $("#recommendationLike").on("click", function () {
 				 <c:choose>
 					<c:when test="${empty sessionScope.sessionId }">
@@ -109,7 +112,6 @@ function movieDelete(){
 					            data : {'mo_number':mo_num, 'm_id':m_num },
 				                error:function(request, status, error){
 					        		alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-
 					        	},
 					            success : function(data) {
 					            	
@@ -121,7 +123,6 @@ function movieDelete(){
 					                    else if (data == 1){
 					                     alert("추천취소");
 					                    	location.reload();
-
 					                }
 					            }
 					        });
@@ -138,7 +139,6 @@ function movieDelete(){
 					<c:otherwise>
 					location.href="reservation?mo_number=${movie.mo_number }";
 					
-
 					     </c:otherwise>
 					     </c:choose>
 				 
@@ -171,7 +171,6 @@ function movieDelete(){
 					                  	  else if (data == 1){
 					                   	  alert("관심영화 등록을 취소하셨습니다.");
 					                    	location.reload();
-
 					                }
 					            }
 					        }); 
@@ -195,7 +194,6 @@ function movieDelete(){
 		            data : {'mo_number':mo_num, 'm_id':m_num },
 	                error:function(request, status, error){
 		        		alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-
 		        	},
 		            success : function(data) {
 		            	
@@ -207,19 +205,15 @@ function movieDelete(){
 		                    else if (data == 1){
 		                     alert("추천취소");
 		                    	location.reload();
-
 		                }
 		            }
 		        });
 } */
 		
-
 	
 	
 	
 	
-
-
 </script>
 
 

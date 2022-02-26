@@ -22,5 +22,7 @@
 
 		<typeAlias type="com.oracle.HomeTheater.model.SeatandTime"
 			alias="SeatandTime" />
+		<typeAlias alias="Actor"
+			type="com.oracle.HomeTheater.model.Actor" />
 	</typeAliases>
 </configuration>

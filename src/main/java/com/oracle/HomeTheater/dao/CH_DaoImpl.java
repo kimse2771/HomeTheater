@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.oracle.HomeTheater.model.Member;
+import com.oracle.HomeTheater.domain.MemberJpa;
+import com.oracle.HomeTheater.model.Actor;
 import com.oracle.HomeTheater.model.Bbs;
 import com.oracle.HomeTheater.model.ChoiceMovie;
 import com.oracle.HomeTheater.model.Movie;
@@ -71,7 +73,7 @@ public class CH_DaoImpl implements CH_Dao {
 		int result = 0;
 		System.out.println("CH_DaoImpl memberDelete Start...");
 		try {
-			result = session.delete("CH_MemberDelete", m_id);
+			result = session.update("CH_MemberDelete", m_id);
 		} catch (Exception e) {
 			System.out.println("CH_DaoImpl memberDelete Excetption->"+e.getMessage());
 		}
@@ -330,6 +332,43 @@ public class CH_DaoImpl implements CH_Dao {
 		}
 		return bbsSearchId;
 	}
+
+	@Override
+	public String delchk(String m_id) {
+		String delchk = null;
+		System.out.println("CH_DaoImpl delchk Start...");
+		try {
+			delchk = session.selectOne("CH_Delchk", m_id);
+		} catch (Exception e) {
+			System.out.println("CH_DaoImpl delchk Excetption->"+e.getMessage());
+		}
+		return delchk;
+	}
+
+	@Override
+	public int adminRestorationMember(String m_id) {
+		int result = 0;
+		System.out.println("CH_DaoImpl adminRestorationMember Start...");
+		try {
+			result = session.update("CH_AdminRestorationMember", m_id);
+		} catch (Exception e) {
+			System.out.println("CH_DaoImpl adminRestorationMember Excetption->"+e.getMessage());
+		}
+		return result;
+	}
+
+	@Override
+	public List<Actor> actorList(int mo_number) {
+		System.out.println("CH_DaoImpl actorList Start...");
+		List<Actor> actorList = null;
+		try {
+			actorList = session.selectList("CH_ActorList", mo_number);
+		} catch (Exception e) {
+			System.out.println("CH_DaoImpl actorList Excetption->"+e.getMessage());
+		}
+		return actorList;
+	}
+
 
 
 
