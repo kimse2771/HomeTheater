@@ -78,14 +78,14 @@ margin-left: 25%;
 
 <script type="text/javascript">
 	function success() {
-		<c:choose>
-		<c:when test="${msg eq 0 }">
-		alert("등록 실패! 중복된 좌석 여부 확인");
-		</c:when>
-		<c:otherwise>
-		alert("등록 되었습니다.");
-		</c:otherwise>
-		</c:choose>
+		var check = "${msg}";
+		
+		if(check==0){
+			alert("등록 실패, 값을 확인하세요.");
+		}else{
+			
+			alert("좌석이 등록되었습니다.");
+		}
 	}
 </script>
 </html>

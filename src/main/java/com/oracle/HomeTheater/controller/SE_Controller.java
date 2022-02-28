@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -144,10 +145,12 @@ public class SE_Controller {
 	public String adminMovieAdd(Movie movie, MultipartFile file, Model model) {
 		System.out.println("SE_Contorller adminMovieAdd Start...");
 		//영화 이미지 업로드
-		String savePath="C:\\spring\\Source\\HomeTheater\\src\\main\\resources\\static\\Img\\";
-		movie.setMo_fileName("Img/"+file.getOriginalFilename());
+		String savePath="C:\\spring\\Source\\HomeTheater\\src\\main\\resources\\static\\";
+		movie.setMo_fileName("img/"+file.getOriginalFilename());
 		System.out.println("SE_Contorller adminMovieAdd Start..." + movie.getMo_fileName());
+		
 		Path filePath = Paths.get(savePath + movie.getMo_fileName());
+		System.out.println("filepath : " + filePath);
 		
 		try {
 			Files.write(filePath, file.getBytes());
@@ -157,16 +160,17 @@ public class SE_Controller {
 		}
 
 		int result = ses.adminMovieAdd(movie);
-
+		System.out.println(result);
 			
 		// 결과가 1이면 성공, 0이면 실패
 		if (result > 0) {
 			System.out.println("성공");
+			model.addAttribute("msg","등록 되었습니다.");
 			return "redirect:movieList";
 		} else {
 			System.out.println("실패");
-			model.addAttribute("msg", "입력 실패 확인해 보세요");
-			return "forward:adminMovieAddForm";
+			model.addAttribute("msg", 0);
+			return "redirect:adminMovieAddForm";
 		}
 
 	}
