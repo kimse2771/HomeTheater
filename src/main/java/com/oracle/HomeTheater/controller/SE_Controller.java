@@ -224,7 +224,6 @@ public class SE_Controller {
 		return check;
 	}
 	//상영 시간 표
-	@ResponseBody
 	@RequestMapping(value="movieTimePopup")
 	public String movieTimePopup(int mo_number,Model model) {
 		System.out.println("SE_Contorller Start movieTimePopup..." );
